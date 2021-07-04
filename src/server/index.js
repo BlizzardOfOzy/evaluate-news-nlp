@@ -3,12 +3,14 @@ const express = require('express')
 const dotenv = require('dotenv')
 dotenv.config()
 const axios = require('axios')
+const cors = require('cors')
 
 const sentimentUrl = 'https://api.meaningcloud.com/sentiment-2.1'
 
 const app = express()
 app.use(express.static('dist'))
 app.use(express.json())
+app.use(cors())
 
 console.log(__dirname)
 
